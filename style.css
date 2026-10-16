@@ -1,4 +1,4 @@
-/* Reset thuộc tính lề mặc định & box-sizing */
+/* 1. Reset thuộc tính mặc định */
 * {
     margin: 0;
     padding: 0;
@@ -7,99 +7,214 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     color: #333333;
+    line-height: 1.6;
+    background-color: #ffffff;
 }
 
-/* Định dạng thanh điều hướng Desktop */
-.navbar {
+/* 2. Định dạng Header */
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #333333;
-    padding: 15px 20px;
+    padding: 15px 30px;
     color: #ffffff;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
+    color: #ffffff;
 }
 
-.nav-links {
+.nav ul {
     list-style: none;
     display: flex;
+    gap: 30px;
 }
 
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
+.nav ul li a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav ul li a:hover {
     color: #00bcd4;
 }
 
-/* Biểu tượng Hamburger (ẩn mặc định trên Desktop) */
-.menu-icon {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* Khu vực nội dung */
-.content {
-    padding: 50px 20px;
+/* 3. Định dạng Hero Section */
+.hero {
     text-align: center;
+    padding: 100px 20px;
+    background-color: #f4f4f4;
 }
 
-.content h1 {
+.hero h1 {
+    font-size: 36px;
     margin-bottom: 15px;
     color: #2c3e50;
 }
 
-.content p {
+.hero p {
+    font-size: 18px;
     color: #666666;
-    font-size: 16px;
+    margin-bottom: 25px;
 }
 
-/* Responsive cho Mobile & Tablet (< 768px) */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #00bcd4;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #008c9e;
+}
+
+/* 4. Định dạng Services Section */
+.services {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background-color: #e0f7fa;
+    border: 1px solid #b2ebf2;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.service h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #00838f;
+}
+
+.service p {
+    font-size: 14px;
+    color: #555555;
+}
+
+/* 5. Định dạng Testimonials Section */
+.testimonials {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #e9ecef;
+}
+
+.testimonials h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    min-width: 280px;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #444444;
+}
+
+.testimonial span {
+    font-weight: bold;
+    color: #00838f;
+    font-size: 14px;
+}
+
+/* 6. Định dạng Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* 7. Media Queries (Xử lý Responsive cho Mobile) */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Ẩn danh sách menu mặc định trên màn hình nhỏ */
+    .header {
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #333333;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
         width: 100%;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        max-width: 100%;
     }
 
-    /* Hiển thị danh sách menu khi JavaScript thêm class .active */
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        padding: 12px 0;
-        border-bottom: 1px solid #444444;
-    }
-
-    .nav-links li:last-child {
-        border-bottom: none;
-    }
-
-    .menu-icon {
-        display: block; /* Hiển thị nút biểu tượng hamburger trên mobile */
+    .services,
+    .testimonials {
+        padding: 40px 20px;
     }
 }

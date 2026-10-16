@@ -3,29 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navbar Practice</title>
+    <title>Landing Page Responsive - MyBrand</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <!-- Thanh điều hướng chính -->
-    <nav class="navbar">
-        <div class="logo">MyWebsite</div>
-        <ul class="nav-links">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Giới thiệu</a></li>
-            <li><a href="#">Dịch vụ</a></li>
-            <li><a href="#">Liên hệ</a></li>
-        </ul>
-        <div class="menu-icon">☰</div>
-    </nav>
+    <!-- 1. Header & Điều hướng -->
+    <header class="header">
+        <div class="logo">MyBrand</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#services">Dịch vụ</a></li>
+                <li><a href="#testimonials">Đánh giá</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Khu vực nội dung kiểm thử -->
-    <main class="content">
-        <h1>Chào mừng bạn đến với MyWebsite</h1>
-        <p>Hãy thử thay đổi kích thước cửa sổ trình duyệt hoặc bật chế độ xem thiết bị di động (F12) để kiểm tra thanh điều hướng responsive.</p>
-    </main>
+    <!-- 2. Hero Section -->
+    <section class="hero">
+        <h1>Chào mừng đến với MyBrand</h1>
+        <p>Giải pháp số 1 cho doanh nghiệp của bạn</p>
+        <a href="#services" class="btn">Tìm hiểu thêm</a>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section id="services" class="services">
+        <h2>Dịch vụ của chúng tôi</h2>
+        <div class="service-container">
+            <div class="service">
+                <h3>Thiết kế web</h3>
+                <p>Giao diện hiện đại, tối ưu SEO và hiển thị mượt mà trên mọi thiết bị.</p>
+            </div>
+            <div class="service">
+                <h3>Phát triển phần mềm</h3>
+                <p>Xây dựng hệ thống phần mềm hiệu năng cao theo yêu cầu doanh nghiệp.</p>
+            </div>
+            <div class="service">
+                <h3>Marketing số</h3>
+                <p>Chiến lược truyền thông tổng thể giúp gia tăng doanh số bền vững.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>Khách hàng nói gì?</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"Dịch vụ tuyệt vời, đội ngũ hỗ trợ vô cùng nhiệt tình!"</p>
+                <span>- Khách hàng A</span>
+            </div>
+            <div class="testimonial">
+                <p>"Tôi rất hài lòng với chất lượng giải pháp của MyBrand."</p>
+                <span>- Khách hàng B</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Footer Section -->
+    <footer id="contact" class="footer">
+        <p>&copy; 2026 MyBrand. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
