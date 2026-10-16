@@ -1,220 +1,161 @@
-/* 1. Reset thuộc tính mặc định */
+/* 1. Reset thuộc tính lề & tính toán kích thước bao gồm border */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
+    padding: 10px;
+    background: #f1f1f1;
     color: #333333;
-    line-height: 1.6;
-    background-color: #ffffff;
 }
 
-/* 2. Định dạng Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333333;
-    padding: 15px 30px;
-    color: #ffffff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.nav ul li a:hover {
-    color: #00bcd4;
-}
-
-/* 3. Định dạng Hero Section */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #f4f4f4;
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #666666;
-    margin-bottom: 25px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #00bcd4;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #008c9e;
-}
-
-/* 4. Định dạng Services Section */
-.services {
-    text-align: center;
-    padding: 60px 20px;
+.wrapper {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.services h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #2c3e50;
-}
-
-.service-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.service {
-    flex: 1;
-    min-width: 250px;
-    max-width: 350px;
-    background-color: #e0f7fa;
-    border: 1px solid #b2ebf2;
-    padding: 25px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.service h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #00838f;
-}
-
-.service p {
-    font-size: 14px;
-    color: #555555;
-}
-
-/* 5. Định dạng Testimonials Section */
-.testimonials {
+/* 2. Header */
+.header {
+    padding: 30px;
     text-align: center;
-    padding: 60px 20px;
-    background-color: #e9ecef;
+    background: #2c3e50;
+    color: #ffffff;
+    border-radius: 6px 6px 0 0;
 }
 
-.testimonials h2 {
+.header h1 {
     font-size: 28px;
-    margin-bottom: 30px;
-    color: #2c3e50;
+    margin-bottom: 8px;
 }
 
-.testimonial-container {
+.header p {
+    font-size: 14px;
+    color: #bdc3c7;
+}
+
+/* 3. Navigation Bar */
+.topnav {
+    overflow: hidden;
+    background-color: #34495e;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.topnav a:hover {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+.topnav a.right {
+    float: right;
+}
+
+/* 4. Khung nội dung chính (Row chứa các cột) */
+.row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
+    margin-top: 15px;
 }
 
-.testimonial {
+/* Cột trái chiếm 75% chiều rộng trên Desktop */
+.leftcolumn {   
+    flex: 75%;
+    padding-right: 15px;
+}
+
+/* Cột phải chiếm 25% chiều rộng trên Desktop */
+.rightcolumn {
+    flex: 25%;
+}
+
+/* Định dạng thẻ Card chứa thông tin */
+.card {
     background-color: #ffffff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-    flex: 1;
-    min-width: 280px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.testimonial p {
-    font-style: italic;
-    margin-bottom: 10px;
-    color: #444444;
+.card h2, .card h3 {
+    color: #2c3e50;
+    margin-bottom: 8px;
 }
 
-.testimonial span {
-    font-weight: bold;
-    color: #00838f;
+.card h5 {
+    color: #7f8c8d;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.6;
     font-size: 14px;
 }
 
-/* 6. Định dạng Footer */
-.footer {
-    text-align: center;
+/* Khối giả lập hình ảnh */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
     padding: 20px;
-    background-color: #333333;
+    text-align: center;
     color: #ffffff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 5. Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #2c3e50;
+    color: #ffffff;
+    margin-top: 10px;
+    border-radius: 0 0 6px 6px;
     font-size: 14px;
 }
 
-/* 7. Media Queries (Xử lý Responsive cho Mobile) */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        padding: 15px;
-        gap: 15px;
-    }
+/* 6. MEDIA QUERIES (XỬ LÝ RESPONSIVE DESIGN) */
 
-    .nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+/* Cho màn hình Tablet và Mobile (dưới 800px) */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        flex: 100%;
+        padding-right: 0;
     }
+}
 
-    .hero {
-        padding: 60px 20px;
-    }
-
-    .hero h1 {
-        font-size: 26px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .service-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service {
+/* Cho màn hình Mobile nhỏ (dưới 500px) */
+@media screen and (max-width: 500px) {
+    .topnav a {
+        float: none;
         width: 100%;
-        max-width: 100%;
+        text-align: left;
     }
 
-    .services,
-    .testimonials {
-        padding: 40px 20px;
+    .topnav a.right {
+        float: none;
+    }
+
+    .header {
+        padding: 20px 10px;
+    }
+
+    .header h1 {
+        font-size: 22px;
     }
 }

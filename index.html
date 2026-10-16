@@ -3,69 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Responsive - MyBrand</title>
+    <title>Bố cục Trang web Responsive (RWD)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. Header & Điều hướng -->
-    <header class="header">
-        <div class="logo">MyBrand</div>
-        <nav class="nav">
-            <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#services">Dịch vụ</a></li>
-                <li><a href="#testimonials">Đánh giá</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Khung chứa toàn bộ trang web -->
+    <div class="wrapper">
 
-    <!-- 2. Hero Section -->
-    <section class="hero">
-        <h1>Chào mừng đến với MyBrand</h1>
-        <p>Giải pháp số 1 cho doanh nghiệp của bạn</p>
-        <a href="#services" class="btn">Tìm hiểu thêm</a>
-    </section>
-
-    <!-- 3. Services Section -->
-    <section id="services" class="services">
-        <h2>Dịch vụ của chúng tôi</h2>
-        <div class="service-container">
-            <div class="service">
-                <h3>Thiết kế web</h3>
-                <p>Giao diện hiện đại, tối ưu SEO và hiển thị mượt mà trên mọi thiết bị.</p>
-            </div>
-            <div class="service">
-                <h3>Phát triển phần mềm</h3>
-                <p>Xây dựng hệ thống phần mềm hiệu năng cao theo yêu cầu doanh nghiệp.</p>
-            </div>
-            <div class="service">
-                <h3>Marketing số</h3>
-                <p>Chiến lược truyền thông tổng thể giúp gia tăng doanh số bền vững.</p>
-            </div>
+        <!-- Header -->
+        <div class="header">
+            <h1>RWD LAYOUT WEBSITE</h1>
+            <p>Thiết kế bố cục đáp ứng chuẩn mọi kích thước màn hình</p>
         </div>
-    </section>
 
-    <!-- 4. Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>Khách hàng nói gì?</h2>
-        <div class="testimonial-container">
-            <div class="testimonial">
-                <p>"Dịch vụ tuyệt vời, đội ngũ hỗ trợ vô cùng nhiệt tình!"</p>
-                <span>- Khách hàng A</span>
-            </div>
-            <div class="testimonial">
-                <p>"Tôi rất hài lòng với chất lượng giải pháp của MyBrand."</p>
-                <span>- Khách hàng B</span>
-            </div>
+        <!-- Navigation Menu -->
+        <div class="topnav">
+            <a href="#">Trang chủ</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#" class="right">Liên hệ</a>
         </div>
-    </section>
 
-    <!-- 5. Footer Section -->
-    <footer id="contact" class="footer">
-        <p>&copy; 2026 MyBrand. All rights reserved.</p>
-    </footer>
+        <!-- Main Content Wrapper (Gồm Cột chính và Sidebar) -->
+        <div class="row">
+            
+            <!-- Cột trái / Sidebar phụ -->
+            <div class="leftcolumn">
+                <div class="card">
+                    <h2>Bài viết nổi bật</h2>
+                    <h5>Đăng ngày 16/10/2026</h5>
+                    <div class="fakeimg" style="height:200px;">Hình ảnh bài viết</div>
+                    <p>Mô tả ngắn về bài viết... RWD (Responsive Web Design) giúp giao diện tự động điều chỉnh phù hợp với kích thước màn hình người dùng.</p>
+                </div>
+                <div class="card">
+                    <h2>Tin tức mới nhất</h2>
+                    <h5>Đăng ngày 15/10/2026</h5>
+                    <div class="fakeimg" style="height:200px;">Hình ảnh bài viết</div>
+                    <p>Nội dung chia sẻ về các kỹ thuật bố cục CSS Flexbox, Grid và Media Queries giúp tối ưu hóa trải nghiệm người dùng.</p>
+                </div>
+            </div>
+
+            <!-- Cột phải / Sidebar thông tin -->
+            <div class="rightcolumn">
+                <div class="card">
+                    <h3>Giới thiệu</h3>
+                    <div class="fakeimg" style="height:100px;">Ảnh đại diện</div>
+                    <p>Website chia sẻ kiến thức lập trình web giao diện chuẩn Responsive.</p>
+                </div>
+                <div class="card">
+                    <h3>Bài viết phổ biến</h3>
+                    <div class="fakeimg">Bài viết 1</div><br>
+                    <div class="fakeimg">Bài viết 2</div><br>
+                    <div class="fakeimg">Bài viết 3</div>
+                </div>
+                <div class="card">
+                    <h3>Theo dõi</h3>
+                    <p>Kết nối qua các mạng xã hội.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2026 CodeGym Practice - Responsive Web Design Layout</p>
+        </div>
+
+    </div>
 
 </body>
 </html>
