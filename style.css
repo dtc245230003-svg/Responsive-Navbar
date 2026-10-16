@@ -1,4 +1,4 @@
-/* 1. Reset thuộc tính lề & tính toán kích thước bao gồm border */
+/* 1. Reset lề & cấu hình border-box */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,155 +7,81 @@
 
 body {
     font-family: Arial, sans-serif;
-    padding: 10px;
-    background: #f1f1f1;
+    padding: 20px;
+    background-color: #f8f9fa;
     color: #333333;
 }
 
-.wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* 2. Header */
-.header {
-    padding: 30px;
+.title {
     text-align: center;
-    background: #2c3e50;
-    color: #ffffff;
-    border-radius: 6px 6px 0 0;
-}
-
-.header h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
-}
-
-.header p {
-    font-size: 14px;
-    color: #bdc3c7;
-}
-
-/* 3. Navigation Bar */
-.topnav {
-    overflow: hidden;
-    background-color: #34495e;
-}
-
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 18px;
-    text-decoration: none;
-    font-size: 15px;
-    transition: background-color 0.2s ease;
-}
-
-.topnav a:hover {
-    background-color: #e74c3c;
-    color: #ffffff;
-}
-
-.topnav a.right {
-    float: right;
-}
-
-/* 4. Khung nội dung chính (Row chứa các cột) */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 15px;
-}
-
-/* Cột trái chiếm 75% chiều rộng trên Desktop */
-.leftcolumn {   
-    flex: 75%;
-    padding-right: 15px;
-}
-
-/* Cột phải chiếm 25% chiều rộng trên Desktop */
-.rightcolumn {
-    flex: 25%;
-}
-
-/* Định dạng thẻ Card chứa thông tin */
-.card {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.card h2, .card h3 {
     color: #2c3e50;
     margin-bottom: 8px;
 }
 
-.card h5 {
+.subtitle {
+    text-align: center;
     color: #7f8c8d;
-    font-weight: normal;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* 2. Container Flexbox cho Gallery */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -6px;
+}
+
+/* 3. Mặc định (Màn hình > 700px): Hiển thị 4 ảnh / dòng (chiếm 25% chiều rộng) */
+.responsive {
+    padding: 0 6px;
+    flex: 25%;
+    max-width: 25%;
     margin-bottom: 12px;
 }
 
-.card p {
-    line-height: 1.6;
-    font-size: 14px;
+/* Thẻ Gallery khung ảnh */
+div.gallery {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Khối giả lập hình ảnh */
-.fakeimg {
-    background-color: #aaa;
+div.gallery:hover {
+    border-color: #ff4757;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+div.gallery img {
     width: 100%;
-    padding: 20px;
-    text-align: center;
-    color: #ffffff;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: auto;
+    display: block;
 }
 
-/* 5. Footer */
-.footer {
-    padding: 20px;
+div.desc {
+    padding: 12px;
     text-align: center;
-    background: #2c3e50;
-    color: #ffffff;
-    margin-top: 10px;
-    border-radius: 0 0 6px 6px;
-    font-size: 14px;
+    font-size: 13px;
+    color: #444444;
 }
 
-/* 6. MEDIA QUERIES (XỬ LÝ RESPONSIVE DESIGN) */
+/* 4. MEDIA QUERIES RESPONSIVE DESIGN */
 
-/* Cho màn hình Tablet và Mobile (dưới 800px) */
-@media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
+/* Màn hình nhỏ hơn 700px: Hiển thị 2 ảnh / dòng (chiếm 50% chiều rộng) */
+@media only screen and (max-width: 700px) {
+    .responsive {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Màn hình nhỏ hơn 500px: Hiển thị 1 ảnh / dòng (chiếm 100% chiều rộng) */
+@media only screen and (max-width: 500px) {
+    .responsive {
         flex: 100%;
-        padding-right: 0;
-    }
-}
-
-/* Cho màn hình Mobile nhỏ (dưới 500px) */
-@media screen and (max-width: 500px) {
-    .topnav a {
-        float: none;
-        width: 100%;
-        text-align: left;
-    }
-
-    .topnav a.right {
-        float: none;
-    }
-
-    .header {
-        padding: 20px 10px;
-    }
-
-    .header h1 {
-        font-size: 22px;
+        max-width: 100%;
     }
 }
